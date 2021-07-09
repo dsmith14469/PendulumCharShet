@@ -1,0 +1,557 @@
+/* --------- Inputs ------------- */
+
+.charsheet input[type="text"] {
+  background-color: transparent;
+  border-style: none none solid none;
+  border-color: black;
+}
+
+.charsheet input[type="number"] {
+  background-color: transparent;
+  border: none;
+}
+
+.charsheet textarea {
+  background-color: transparent;
+  width: 89%;
+  height: 90%;
+  margin-right: 5px;
+}
+
+.charsheet textarea:focus,
+input[type="text"]:focus,
+input[type="number"]:focus{
+  background-color: #F6CED8;
+}
+
+/* -----Hides up/down buttons on numberfields that don't need them ---*/
+
+input[type=number].sheet-ref::-webkit-inner-spin-button,
+input[type=number].sheet-ref::-webkit-outer-spin-button,
+input[type=number].sheet-txtfield::-webkit-inner-spin-button,
+input[type=number].sheet-txtfield::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number].sheet-ref,
+input[type=number].sheet-txtfield {
+  -moz-appearance: textfield;
+}
+
+
+/* ------- Buttons ---------- */
+.charsheet button[type=roll].d6-dice::before {    /*new die changes die roller to d6*/
+    font-family: 'dicefontd6', arial, sans-serif;
+    content: 'F ';
+    color: red;
+    font-size: 30px;
+}
+
+/*-----------------------------------------------------------------*\
+  #SECTIONS
+\*-----------------------------------------------------------------*/
+
+
+/* --------- General Section Styling ------------- */
+.sheet-flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.sheet-flex-middle {
+  display: flex;
+  justify-content: center;
+}
+
+.sheet-flex-down {
+  flex-flow: column nowrap;
+}
+
+.sheet-section {
+    padding: 5px;
+    min-height: 90%;
+}
+
+/* --------- Grid ------------- */
+.charsheet .sheet-grid-section{
+  display: grid;
+  grid-template-columns: 300px 500px;
+  grid-template-rows:  180px 50px 300px 300px 225px 300px;
+  grid-template-areas:	"name hp"
+						"custroll custroll"
+						"stats skills"
+						"combat skills"
+						"weapons weapons"
+						"notes equip";
+
+  grid-gap: 5px;
+  width:    700px; /* Defines the width and height of the sheet */
+  height:   900px;
+}
+.charsheet div.sheet-block{
+  display: grid;
+  justify-content: left;
+  padding: 5px;
+  border: 3px solid black;
+}
+.charsheet div.sheet-name{
+  grid-area: name;
+}
+.charsheet div.sheet-hp{
+  grid-area: hp;
+}
+.charsheet div.sheet-stat{
+  grid-area: stats;
+}
+.charsheet div.sheet-skills{
+  grid-area: skills;
+}
+.charsheet div.sheet-combat{
+  grid-area: combat;
+}
+.charsheet div.sheet-equip{
+  grid-area: equip;
+}
+.charsheet div.sheet-notes{
+  grid-area: notes;
+}
+
+.charsheet div.sheet-weapons{
+  grid-area: weapons;
+}
+.charsheet div.sheet-custroll{
+  grid-area: custroll;
+}
+}
+/* STATS SECTION */
+
+
+.charsheet .sheet-bonus {
+  width: 100%;
+  background-color: #C0C0C0;
+}
+
+/* CUSTOM ROLL TEMPLATES */
+
+
+/* Smaller margins - remove these if you want the huge default left margin */
+.sheet-rolltemplate-customskill {
+  margin-left: -37px;
+}
+.withoutavatars .sheet-rolltemplate-customskill {
+  margin-left: -7px;
+}
+
+.sheet-rolltemplate-customskill .sheet-container {
+  border: 1px solid;
+  /* by default, the border is the same color as the header. You can change this here, e.g. to black */
+  border-color: var(--header-bg-color);
+}
+
+/* Header formatting - title and subtitle */
+.sheet-rolltemplate-customskill .sheet-header {
+  background-color: var(--header-bg-color);
+  /* change text-align to center to center the header text */
+  text-align: left;
+  color: var(--header-text-color);
+  padding: 5px;
+}
+.sheet-rolltemplate-customskill .sheet-title {
+  font-size:1.1em;
+}
+.sheet-rolltemplate-customskill .sheet-subtitle {
+  font-size:.9em;
+}
+
+/* example colors */
+.sheet-rolltemplate-customskill .sheet-container {
+  /* this is the default color */
+  --header-bg-color: rgba(112,32,130,1);
+  --header-text-color: #FFF;
+}
+.sheet-rolltemplate-customskill .sheet-container.sheet-color-red {
+  --header-bg-color: #F00;
+}
+.sheet-rolltemplate-customskill .sheet-container.sheet-color-green {
+  --header-bg-color: #0F0;
+  --header-text-color: #000;
+}
+
+/* Allprops part */
+.sheet-rolltemplate-customskill .sheet-content {
+  display: grid;
+  background: #FFF;
+  /* Header formatting - modify the column layout below */
+  grid-template-columns: auto auto;
+  /* Line height to match default roll template */
+  line-height:1.4em;
+}
+.sheet-rolltemplate-customskill .sheet-content > div {
+  padding: 5px;
+}
+
+/* Left column */
+.sheet-rolltemplate-customskill .sheet-content .sheet-key {
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+}
+
+/* Empty rule, use this if you want to change the right column 
+.sheet-rolltemplate-customskill .sheet-value {
+}
+*/
+
+/* Make even-numbered rows grey */
+.sheet-rolltemplate-customskill .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-customskill .sheet-content :nth-child(4n) {
+  background:#EEE;
+}
+
+/* Description field */
+.sheet-rolltemplate-customskill .sheet-desc {
+  grid-column: span 2;
+  padding: 5px;
+  text-align: center;
+}
+
+
+
+
+/* Smaller margins - remove these if you want the huge default left margin */
+.sheet-rolltemplate-customstat {
+  margin-left: -37px;
+}
+.withoutavatars .sheet-rolltemplate-customstat {
+  margin-left: -7px;
+}
+
+.sheet-rolltemplate-customstat .sheet-container {
+  border: 1px solid;
+  /* by default, the border is the same color as the header. You can change this here, e.g. to black */
+  border-color: var(--header-bg-color);
+}
+
+/* Header formatting - title and subtitle */
+.sheet-rolltemplate-customstat .sheet-header {
+  background-color: var(--header-bg-color);
+  /* change text-align to center to center the header text */
+  text-align: left;
+  color: var(--header-text-color);
+  padding: 5px;
+}
+.sheet-rolltemplate-customstat .sheet-title {
+  font-size:1.1em;
+}
+.sheet-rolltemplate-customstat .sheet-subtitle {
+  font-size:.9em;
+}
+
+/* example colors */
+.sheet-rolltemplate-customstat .sheet-container {
+  /* this is the default color */
+  --header-bg-color: rgba(112,212,88,1);
+  --header-text-color: #FFF;
+}
+.sheet-rolltemplate-customstat .sheet-container.sheet-color-red {
+  --header-bg-color: #F00;
+}
+.sheet-rolltemplate-customstat .sheet-container.sheet-color-green {
+  --header-bg-color: #0F0;
+  --header-text-color: #000;
+}
+
+/* Allprops part */
+.sheet-rolltemplate-customstat .sheet-content {
+  display: grid;
+  background: #FFF;
+  /* Header formatting - modify the column layout below */
+  grid-template-columns: auto auto;
+  /* Line height to match default roll template */
+  line-height:1.4em;
+}
+.sheet-rolltemplate-customstat .sheet-content > div {
+  padding: 5px;
+}
+
+/* Left column */
+.sheet-rolltemplate-customstat .sheet-content .sheet-key {
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+}
+
+/* Empty rule, use this if you want to change the right column 
+.sheet-rolltemplate-customstat .sheet-value {
+}
+*/
+
+/* Make even-numbered rows grey */
+.sheet-rolltemplate-customstat .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-customstat .sheet-content :nth-child(4n) {
+  background:#EEE;
+}
+
+/* Description field */
+.sheet-rolltemplate-customstat .sheet-desc {
+  grid-column: span 2;
+  padding: 5px;
+  text-align: center;
+}
+
+
+
+
+
+
+/* Smaller margins - remove these if you want the huge default left margin */
+.sheet-rolltemplate-customweapon {
+  margin-left: -37px;
+}
+.withoutavatars .sheet-rolltemplate-customweapon {
+  margin-left: -7px;
+}
+
+.sheet-rolltemplate-customweapon .sheet-container {
+  border: 1px solid;
+  /* by default, the border is the same color as the header. You can change this here, e.g. to black */
+  border-color: var(--header-bg-color);
+}
+
+/* Header formatting - title and subtitle */
+.sheet-rolltemplate-customweapon .sheet-header {
+  background-color: var(--header-bg-color);
+  /* change text-align to center to center the header text */
+  text-align: left;
+  color: var(--header-text-color);
+  padding: 5px;
+}
+.sheet-rolltemplate-customweapon .sheet-title {
+  font-size:1.1em;
+}
+.sheet-rolltemplate-customweapon .sheet-subtitle {
+  font-size:.9em;
+}
+
+/* example colors */
+.sheet-rolltemplate-customweapon .sheet-container {
+  /* this is the default color */
+  --header-bg-color: rgba(206,17,88,1);
+  --header-text-color: #FFF;
+}
+.sheet-rolltemplate-customweapon .sheet-container.sheet-color-red {
+  --header-bg-color: #F00;
+}
+.sheet-rolltemplate-customweapon .sheet-container.sheet-color-green {
+  --header-bg-color: #0F0;
+  --header-text-color: #000;
+}
+
+/* Allprops part */
+.sheet-rolltemplate-customweapon .sheet-content {
+  display: grid;
+  background: #FFF;
+  /* Header formatting - modify the column layout below */
+  grid-template-columns: auto auto;
+  /* Line height to match default roll template */
+  line-height:1.4em;
+}
+.sheet-rolltemplate-customweapon .sheet-content > div {
+  padding: 5px;
+}
+
+/* Left column */
+.sheet-rolltemplate-customweapon .sheet-content .sheet-key {
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+}
+
+/* Empty rule, use this if you want to change the right column 
+.sheet-rolltemplate-customweapon .sheet-value {
+}
+*/
+
+/* Make even-numbered rows grey */
+.sheet-rolltemplate-customweapon .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-customweapon .sheet-content :nth-child(4n) {
+  background:#EEE;
+}
+
+/* Description field */
+.sheet-rolltemplate-customweapon .sheet-desc {
+  grid-column: span 2;
+  padding: 5px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+/* Smaller margins - remove these if you want the huge default left margin */
+.sheet-rolltemplate-customcombat {
+  margin-left: -37px;
+}
+.withoutavatars .sheet-rolltemplate-customcombat {
+  margin-left: -7px;
+}
+
+.sheet-rolltemplate-customcombat .sheet-container {
+  border: 1px solid;
+  /* by default, the border is the same color as the header. You can change this here, e.g. to black */
+  border-color: var(--header-bg-color);
+}
+
+/* Header formatting - title and subtitle */
+.sheet-rolltemplate-customcombat .sheet-header {
+  background-color: var(--header-bg-color);
+  /* change text-align to center to center the header text */
+  text-align: left;
+  color: var(--header-text-color);
+  padding: 5px;
+}
+.sheet-rolltemplate-customcombat .sheet-title {
+  font-size:1.1em;
+}
+.sheet-rolltemplate-customcombat .sheet-subtitle {
+  font-size:.9em;
+}
+
+/* example colors */
+.sheet-rolltemplate-customcombat .sheet-container {
+  /* this is the default color */
+  --header-bg-color: rgba(88,150,212,1);
+  --header-text-color: #FFF;
+}
+.sheet-rolltemplate-customcombat .sheet-container.sheet-color-red {
+  --header-bg-color: #F00;
+}
+.sheet-rolltemplate-customcombat .sheet-container.sheet-color-green {
+  --header-bg-color: #0F0;
+  --header-text-color: #000;
+}
+
+/* Allprops part */
+.sheet-rolltemplate-customcombat .sheet-content {
+  display: grid;
+  background: #FFF;
+  /* Header formatting - modify the column layout below */
+  grid-template-columns: auto auto;
+  /* Line height to match default roll template */
+  line-height:1.4em;
+}
+.sheet-rolltemplate-customcombat .sheet-content > div {
+  padding: 5px;
+}
+
+/* Left column */
+.sheet-rolltemplate-customcombat .sheet-content .sheet-key {
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+}
+
+/* Empty rule, use this if you want to change the right column 
+.sheet-rolltemplate-customcombat .sheet-value {
+}
+*/
+
+/* Make even-numbered rows grey */
+.sheet-rolltemplate-customcombat .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-customcombat .sheet-content :nth-child(4n) {
+  background:#EEE;
+}
+
+/* Description field */
+.sheet-rolltemplate-customcombat .sheet-desc {
+  grid-column: span 2;
+  padding: 5px;
+  text-align: center;
+}
+
+
+
+
+/* Smaller margins - remove these if you want the huge default left margin */
+.sheet-rolltemplate-custroll {
+  margin-left: -37px;
+}
+.withoutavatars .sheet-rolltemplate-custroll {
+  margin-left: -7px;
+}
+
+.sheet-rolltemplate-custroll .sheet-container {
+  border: 1px solid;
+  /* by default, the border is the same color as the header. You can change this here, e.g. to black */
+  border-color: var(--header-bg-color);
+}
+
+/* Header formatting - title and subtitle */
+.sheet-rolltemplate-custroll .sheet-header {
+  background-color: var(--header-bg-color);
+  /* change text-align to center to center the header text */
+  text-align: left;
+  color: var(--header-text-color);
+  padding: 5px;
+}
+.sheet-rolltemplate-custroll .sheet-title {
+  font-size:1.1em;
+}
+.sheet-rolltemplate-custroll .sheet-subtitle {
+  font-size:.9em;
+}
+
+/* example colors */
+.sheet-rolltemplate-custroll .sheet-container {
+  /* this is the default color */
+  --header-bg-color: rgba(191,63,191,1);
+  --header-text-color: #FFF;
+}
+.sheet-rolltemplate-custroll .sheet-container.sheet-color-red {
+  --header-bg-color: #F00;
+}
+.sheet-rolltemplate-custroll .sheet-container.sheet-color-green {
+  --header-bg-color: #0F0;
+  --header-text-color: #000;
+}
+
+/* Allprops part */
+.sheet-rolltemplate-custroll .sheet-content {
+  display: grid;
+  background: #FFF;
+  /* Header formatting - modify the column layout below */
+  grid-template-columns: auto auto;
+  /* Line height to match default roll template */
+  line-height:1.4em;
+}
+.sheet-rolltemplate-custroll .sheet-content > div {
+  padding: 5px;
+}
+
+/* Left column */
+.sheet-rolltemplate-custroll .sheet-content .sheet-key {
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+}
+
+/* Empty rule, use this if you want to change the right column 
+.sheet-rolltemplate-custroll .sheet-value {
+}
+*/
+
+/* Make even-numbered rows grey */
+.sheet-rolltemplate-custroll .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-custroll .sheet-content :nth-child(4n) {
+  background:#EEE;
+}
+
+/* Description field */
+.sheet-rolltemplate-custroll .sheet-desc {
+  grid-column: span 2;
+  padding: 5px;
+  text-align: center;
+}

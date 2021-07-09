@@ -1,0 +1,575 @@
+
+<div class="sheet-grid-section">
+
+<!-- NAME SECTION -->
+  <div class="sheet-name sheet-block">
+    <div class="section-small flex-center">
+      <b>CHAR NAME: </b>
+      <input name="attr_character_name" type="text">
+    </div>
+
+	    <div class="section-small flex-center">
+      <b>HEIGHT: </b>
+      <input name="attr_height" type="text">
+    </div>
+	    <div class="section-small flex-center">
+      <b>WEIGHT: </b>
+      <input name="attr_weight" type="text">
+    </div>
+	    <div class="section-small flex-center">
+      <b>BUILD: </b>
+      <input name="attr_build" type="text">
+    </div>
+	    <div class="section-small flex-center">
+      <b>EYES: </b>
+      <input name="attr_eyes" type="text">
+    </div>
+	    <div class="section-small flex-center">
+      <b>HAIR: </b>
+      <input name="attr_hair" type="text">
+    </div>
+  </div>
+  
+  <div class="sheet-hp sheet-block">
+    <div class="section-small flex-center">
+      <b>PLAYER NAME: </b>
+      <input name="attr_p_name" type="text">
+    </div>
+    <div class="section-small flex-center">
+      <b>XP TOTAL: </b>
+      <input name="attr_xptotal" type="text">
+    </div>
+    <div class="section-small flex-center">
+      <b>PERSONA: </b>
+      <input name="attr_persona" type="text">
+    </div>
+    <div class="section-small flex-center">
+      <b>MISC DESC: </b>
+      <input name="attr_miscdesc" type="text">
+    </div>
+    <div class="section-small flex-center">
+      <b>TIER: </b>
+      <input name="attr_tier" type="text">
+    </div>
+    <div class="section-small flex-center">
+      <b>UNSPENT: </b>
+      <input name="attr_unspent" type="text">
+    </div>
+
+ </div>
+
+
+<!-- MAIN STAT SECTION -->
+  <div class="sheet-stat sheet-block">
+
+
+    <div class="sheet-stat-block flex-center">
+      <input name="attr_muscle" type="number" value="">
+	  <b>MUSCLE</b>
+      <span style="text-decoration: underline;" name="attr_muscle_dice"></span>
+      <button class="d6-dice" name="roll_muscle" type="roll" value="&{template:customstat} {{title=Muscle}} {{Result=[[@{muscle_dice}]]}}"></button>
+    </div>
+
+    <div class="sheet-stat-block flex-center">
+      <input name="attr_nimbleness" type="number" value="">
+      <b>NIMBLENESS</b>
+      <span style="text-decoration: underline;" name="attr_nimbleness_dice"></span>
+      <button class="d6-dice" name="roll_nimbleness" type="roll" value="&{template:customstat} {{title=Nimbleness}} {{Result=[[@{nimbleness_dice}]]}}"></button>
+    </div>
+
+    <div class="sheet-stat-block flex-center">
+ 
+      <input name="attr_wits" type="number" value="">
+	  <b>WITS</b>
+      <span style="text-decoration: underline;" name="attr_wits_dice"></span>
+      <button class="d6-dice" name="roll_wits" type="roll" value="&{template:customstat} {{title=Wits}} {{Result=[[@{wits_dice}]]}}"></button>
+    </div>
+
+    <div class="sheet-stat-block flex-center">
+      <input name="attr_instinct" type="number" value="">
+      <b>INSTINCT</b>
+      <span style="text-decoration: underline;" name="attr_instinct_dice"></span>
+      <button class="d6-dice" name="roll_instinct" type="roll" value="&{template:customstat} {{title=Instinct}} {{Result=[[@{instinct_dice}]]}}"></button>
+    </div>
+
+    <div class="sheet-stat-block flex-center">
+      <input name="attr_initiative" type="number" value="">
+      <b>INITIATIVE</b>
+      <span style="text-decoration: underline;" name="attr_initiative_dice"></span>
+      <button class="d6-dice" name="roll_initiative" type="roll" value="&{template:customstat} {{title=Initiative}} {{Result=[[@{initiative_dice}]]}} &{tracker}"></button>
+    </div>
+
+    <div class="sheet-stat-block flex-center">
+      <input name="attr_health" type="number" value="">
+      <b>HEALTH</b>
+       <input name="attr_health_max" type="number" value="">
+      <b>HEALTH MAX</b>    
+    </div>
+	
+
+  
+    <div class="sheet-stat-block flex-center">
+      <input name="attr_speed" type="number" value="">
+      <b>SPEED</b>
+
+    </div>
+	
+	<div class="sheet-stat-block flex-center">
+      <input name="attr_tension" type="number" value="">
+      <b>TENSION</b>
+
+    </div>
+  </div>
+  
+  
+<div class="sheet-custroll sheet-block">
+     <div class="sheet-stat-block flex-center">
+  <input type="text" name="attr_c1" style="width:50px" />D6 + 
+  <input type="text" name="attr_c2" style="width:50px" />D10 + 
+  <input type="text" name="attr_c3" style="width:50px" />mod + 
+  <input type="text" name="attr_c4" style="width:50px" />D4 - 
+  <input type="text" name="attr_c5" style="width:50px" />D8 - 
+  <input type="text" name="attr_c6" style="width:50px" />D12
+<button class="d6-dice" name="roll_w1" type="roll" value="&{template:customweapon} {{title=Custom Roll}} {{Result=[[@{c1}d6+ @{c2}d10+@{c3}+@{c4}d4-@{c5}d8-@{c6}d12]]}}">
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- MAIN combat SECTION -->
+  <div class="sheet-combat sheet-block">
+
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_unarmed" type="number" value="">
+      <b>UNARMED</b>
+      <span style="text-decoration: underline;" name="attr_unarmed_dice"></span>
+	  <i>MUSCLE</i>
+      <button class="d6-dice" name="roll_unarmed" type="roll" value="&{template:customcombat} {{title=Unarmed (Muscle)}} {{Result=[[@{unarmed_dice}+@{muscle_dice}]]}}"></button>
+	  <i>NIMBLENESS</i>
+      <button class="d6-dice" name="roll_unarmed" type="roll" value="&{template:customcombat} {{title=Unarmed (Nimbleness)}} {{Result=[[@{unarmed_dice}+@{nimbleness_dice}]]}}"></button>    </div> 
+	
+
+	 <div class="sheet-stat-block flex-center">
+      <input name="attr_melee" type="number" value="">
+      <b>MELEE</b>
+      <span style="text-decoration: underline;" name="attr_melee_dice"></span>
+	  <i>MUSCLE</i>
+      <button class="d6-dice" name="roll_melee" type="roll" value="&{template:customcombat} {{title=Melee (Muscle)}} {{Result=[[@{melee_dice}+@{muscle_dice}]]}}"></button>
+	  <i>NIMBLENESS</i>
+      <button class="d6-dice" name="roll_melee" type="roll" value="&{template:customcombat} {{title=Melee (Nimbleness)}} {{Result=[[@{melee_dice}+@{nimbleness_dice}]]}}"></button>    </div>
+
+ 
+ <div class="sheet-stat-block flex-center">
+       <input name="attr_guns" type="number" value="">
+	  <b>Guns</b>
+      <span style="text-decoration: underline;" name="attr_guns_dice"></span>
+      <button class="d6-dice" name="roll_guns" type="roll" value="&{template:customcombat} {{title=Guns}} {{Result=[[@{guns_dice}+@{nimbleness_dice}]]}}"></button>
+    </div>	
+	
+	
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_explosives" type="number" value="">
+      <b>EXPLOSIVES</b>
+      <span style="text-decoration: underline;" name="attr_explosives_dice"></span>
+	  <i>WITS</i>
+      <button class="d6-dice" name="roll_explosives" type="roll" value="&{template:customcombat} {{title=Explosives (Wits)}} {{Result=[[@{explosives_dice}+@{wits_dice}]]}}"></button>
+	  <i>NIMBLENESS</i>
+      <button class="d6-dice" name="roll_explosives" type="roll" value="&{template:customcombat} {{title=Explosives (Nimbleness)}} {{Result=[[@{explosives_dice}+@{nimbleness_dice}]]}}"></button>    </div> 
+
+	  
+  </div>
+
+
+<!-- MAIN skill SECTION -->
+    <div class="sheet-skills sheet-block">
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_alchemy" type="number" value="">
+      <b>ALCHEMY</b>
+      <span style="text-decoration: underline;" name="attr_alchemy_dice"></span>
+	  <i>WITS</i>
+	  <input type="text" name="attr_aw_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_alchemy" type="roll" value="&{template:customskill} {{title=Alchemy}} {{Result=[[@{alchemy_dice}+@{wits_dice}+@{aw_bonus}]]}}"></button>
+    </div> 
+
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_animal_handling" type="number" value="">
+      <b>ANIMAL HANDLING</b>
+      <span style="text-decoration: underline;" name="attr_animal_handling_dice"></span>
+	  
+	  <i>INSTINCT</i>
+	  <input type="text" name="attr_ahi_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_animal_handling" type="roll" value="&{template:customskill} {{title=Animal Handling}} {{subtitle=Instinct}} {{Result=[[@{animal_handling_dice}+@{instinct_dice}+@{ahi_bonus}]]}}"></button>
+	  <br>
+	  
+	  <i>NIMBLENESS</i>
+	  <input type="text" name="attr_ahn_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_animal_handling" type="roll" value="&{template:customskill} {{title=Animal Handling }} {{subtitle=Nimbleness}} {{Result=[[@{animal_handling_dice}+@{nimbleness_dice}+@{ahn_bonus}]]}}"></button>
+	   
+</div> 
+     <div class="sheet-stat-block flex-center">
+     <input name="attr_ascertain" type="number" value="">
+	 <b>ASCERTAIN</b>
+      <span style="text-decoration: underline;" name="attr_ascertain_dice"></span>
+	  <i>WITS</i>
+      <button class="d6-dice" name="roll_ascertain" type="roll" value="&{template:customskill} {{title=Ascertain}} {{Result=[[@{ascertain_dice}+@{wits_dice}]]}}"></button>
+    </div> 
+
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_athleticism" type="number" value="">
+      <b>ATHLETICISM</b>
+      <span style="text-decoration: underline;" name="attr_athleticism_dice"></span>
+	  <i>MUSCLE</i>
+      <button class="d6-dice" name="roll_athleticism" type="roll" value="&{template:customskill} {{title=Athleticism }} {{subtitle=Muscle}} {{Result=[[@{athleticism_dice}+@{muscle_dice}]]}}"></button>
+		<i>NIMBLENESS</i>
+      <button class="d6-dice" name="roll_athleticism" type="roll" value="&{template:customskill} {{title=Athleticism}} {{subtitle=Nimbleness}} {{Result=[[@{athleticism_dice}+@{nimbleness_dice}]]}}"></button>    </div> 
+
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_drive" type="number" value="">
+      <b>DRIVE</b>
+      <span style="text-decoration: underline;" name="attr_drive_dice"></span>
+	  <i>NIMBLENESS</i>
+      <button class="d6-dice" name="roll_drive" type="roll" value="&{template:customskill} {{title=Drive}} {{Result=[[@{drive_dice}+@{nimbleness_dice}]]}}"></button>
+    </div> 
+
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_legerdemain" type="number" value="">
+      <b>LEGERDEMAIN</b>
+      <span style="text-decoration: underline;" name="attr_legerdemain_dice"></span>
+	  <i>NIMBLENESS</i>
+      <button class="d6-dice" name="roll_legerdemain" type="roll" value="&{template:customskill} {{title=Legerdemain (Wits)}} {{Result=[[@{legerdemain_dice}+@{nimbleness_dice}]]}}"></button>
+	  <i>WITS</i>
+      <button class="d6-dice" name="roll_legerdemain" type="roll" value="&{template:customskill} {{title=Legerdemain (Instinct)}} {{Result=[[@{legerdemain_dice}+@{wits_dice}]]}}"></button>
+	  </div>
+
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_medical" type="number" value="">
+      <b>MEDICAL</b>
+      <span style="text-decoration: underline;" name="attr_medical_dice"></span>
+	  <i>WITS</i>
+      <button class="d6-dice" name="roll_medical" type="roll" value="&{template:customskill} {{title=Medical}} {{Result=[[@{medical_dice}+@{wits_dice}]]}}"></button>
+    </div> 
+
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_notice" type="number" value="">
+      <b>NOTICE</b>
+      <span style="text-decoration: underline;" name="attr_notice_dice"></span>
+	  <i>WITS</i>
+      <button class="d6-dice" name="roll_notice" type="roll" value="&{template:customskill} {{title=Notice (Wits)}} {{Result=[[@{notice_dice}+@{wits_dice}]]}}"></button>
+	  <i>INSTINCT</i>
+      <button class="d6-dice" name="roll_notice" type="roll" value="&{template:customskill} {{title=Notice (Instinct)}} {{Result=[[@{notice_dice}+@{instincts_dice}]]}}"></button>
+	  </div> 
+
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_occult" type="number" value="">
+      <b>OCCULT</b>
+      <span style="text-decoration: underline;" name="attr_occult_dice"></span>
+	  <i>WITS</i>
+      <button class="d6-dice" name="roll_occult" type="roll" value="&{template:customskill} {{title=Occult (Wits)}} {{Result=[[@{occult_dice}+@{wits_dice}]]}}"></button>
+	  <i>INSTINCT</i>
+      <button class="d6-dice" name="roll_occult" type="roll" value="&{template:customskill} {{title=Occult (Instinct)}} {{Result=[[@{occult_dice}+@{instinct_dice}]]}}"></button>    </div> 
+
+
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_prescence" type="number" value="">
+      <b>PRESCENCE</b>
+      <span style="text-decoration: underline;" name="attr_prescence_dice"></span>
+	  <i>WITS</i>
+      <button class="d6-dice" name="roll_prescence" type="roll" value="&{template:customskill} {{title=Prescence (Wits)}} {{Result=[[@{prescence_dice}+@{instinct_dice}]]}}"></button>
+	  <i>MUSCLE</i>
+      <button class="d6-dice" name="roll_prescence" type="roll" value="&{template:customskill} {{title=Prescence (Muscle)}} {{Result=[[@{prescence_dice}+@{muscle_dice}]]}}"></button>    </div> 
+	
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_pseudoscience" type="number" value="">
+      <b>PSEUDOSCIENCE</b>
+      <span style="text-decoration: underline;" name="attr_pseudoscience_dice"></span>
+	  <i>WITS</i>
+      <button class="d6-dice" name="roll_pseudoscience" type="roll" value="&{template:customskill} {{title=Pseudoscience}} {{Result=[[@{pseudoscience_dice}+@{wits_dice}]]}}"></button>
+    </div> 
+	
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_stealth" type="number" value="">
+      <b>STEALTH</b>
+      <span style="text-decoration: underline;" name="attr_stealth_dice"></span>
+	  <i>NIMBLENESS</i>
+      <button class="d6-dice" name="roll_stealth" type="roll" value="&{template:customskill} {{title=Stealth (Nimbleness)}} {{Result=[[@{stealth_dice}+@{nimbleness_dice}]]}}"></button>
+	  <i>INSTINCT</i>
+      <button class="d6-dice" name="roll_stealth" type="roll" value="&{template:customskill} {{title=Stealth (Instinct)}} {{Result=[[@{stealth_dice}+@{instinct_dice}]]}}"></button>
+	  </div> 
+	
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_streetwise" type="number" value="">
+      <b>STREETWISE</b>
+      <span style="text-decoration: underline;" name="attr_streetwise_dice"></span>
+	  <i>WITS</i>
+      <button class="d6-dice" name="roll_streetwise" type="roll" value="&{template:customskill} {{title=Streetwise (Wits)}} {{Result=[[@{streetwise_dice}+@{wits_dice}]]}}"></button>
+	  <i>INSTINCT</i>
+      <button class="d6-dice" name="roll_streetwise" type="roll" value="&{template:customskill} {{title=Streetwise (Instinct)}} {{Result=[[@{streetwise_dice}+@{instinct_dice}]]}}"></button>
+	  </div> 
+	
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_survival" type="number" value="">
+      <b>SURVIVAL</b>
+      <span style="text-decoration: underline;" name="attr_survival_dice"></span>
+	  <i>WITS</i>
+      <button class="d6-dice" name="roll_survival" type="roll" value="&{template:customskill} {{title=Survival (Wits)}} {{Result=[[@{survival_dice}+@{wits_dice}]]}}"></button>
+	  <i>INSTINCT</i>
+      <button class="d6-dice" name="roll_survival" type="roll" value="&{template:customskill} {{title=Survival (Instinct)}} {{Result=[[@{survival_dice}+@{instinct_dice}]]}}"></button>
+	  </div> 
+	
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_tinkering" type="number" value="">
+      <b>TINKERING</b>
+      <span style="text-decoration: underline;" name="attr_tinkering_dice"></span>
+	  <i>WITS</i>
+      <button class="d6-dice" name="roll_tinkering" type="roll" value="&{template:customskill} {{title=Tinkering (Wits)}} {{Result=[[@{tinkering_dice}+@{wits_dice}]]}}"></button>
+	  <i>NIMBLENESS</i>
+      <button class="d6-dice" name="roll_tinkering" type="roll" value="&{template:customskill} {{title=Tinkering (Nimbleness)}} {{Result=[[@{tinkering_dice}+@{nimbleness_dice}]]}}"></button>
+	  </div> 
+	
+     <div class="sheet-stat-block flex-center">
+      <input name="attr_world_lore" type="number" value="">
+      <b>WORLD-LORE</b>
+      <span style="text-decoration: underline;" name="attr_world_lore_dice"></span>
+	  <i>WITS</i>
+      <button class="d6-dice" name="roll_world_lore" type="roll" value="&{template:customskill} {{title=World-Lore}} {{Result=[[@{world_lore_dice}+@{wits_dice}]]}}"></button>
+    </div> 
+	
+
+	
+  </div>
+
+<!-- ---------------------------WEAPONS----------------- -->
+
+   <div class="sheet-weapons sheet-block">
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Dice</th>
+    <th>Dmg</th>
+	<th>Type</th>
+	<th>Range</th>
+	<th>Roll</th>
+  </tr>
+  <tr>
+  	<td><input type="text" name="attr_w1name" style="width:200px" /></td>
+	<td><input type="text" name="attr_w1dice" style="width:100px" /></td> 
+	<td><input type="text" name="attr_w1dmg" style="width:100px" /></td>
+	<td><input type="text" name="attr_w1dmgtype" style="width:100px" /></td> 
+	<td><input type="text" name="attr_w1range" style="width:100px" /></td> 
+    <td><button class="d6-dice" name="roll_w1" type="roll" value="&{template:customweapon} {{title=@{w1name}}} {{Attack=[[@{w1dice}]]}} {{Damage=[[@{w1dmg}]] @{w1dmgtype} }} ">
+	  </button>
+	</td>  
+  </tr>
+
+  <tr>
+  	<td><input type="text" name="attr_w2name" style="width:200px" /></td>
+	<td><input type="text" name="attr_w2dice" style="width:100px" /></td> 
+	<td><input type="text" name="attr_w2dmg" style="width:100px" /></td>
+	<td><input type="text" name="attr_w2dmgtype" style="width:100px" /></td> 
+	<td><input type="text" name="attr_w2range" style="width:100px" /></td> 
+    <td><button class="d6-dice" name="roll_w2" type="roll" value="&{template:customweapon} {{title=@{w2name}}}
+	{{Attack=[[@{w2dice}]]}} {{Damage=[[@{w2dmg}]] @{w2dmgtype} }} ">
+	  </button>
+	</td>  
+  </tr>
+
+  <tr>
+  	<td><input type="text" name="attr_w3name" style="width:200px" /></td>
+	<td><input type="text" name="attr_w3dice" style="width:100px" /></td> 
+	<td><input type="text" name="attr_w3dmg" style="width:100px" /></td>
+	<td><input type="text" name="attr_w3dmgtype" style="width:100px" /></td> 
+	<td><input type="text" name="attr_w3range" style="width:100px" /></td> 
+    <td><button class="d6-dice" name="roll_w3" type="roll" value="&{template:customweapon} {{title=@{w3name}}}
+	{{Attack=[[@{w3dice}]]}} {{Damage=[[@{w3dmg}]] @{w3dmgtype} }} ">
+	  </button>
+	</td>  
+  </tr>
+
+  <tr>
+  	<td><input type="text" name="attr_w4name" style="width:200px" /></td>
+	<td><input type="text" name="attr_w4dice" style="width:100px" /></td> 
+	<td><input type="text" name="attr_w4dmg" style="width:100px" /></td>
+	<td><input type="text" name="attr_w4dmgtype" style="width:100px" /></td> 
+	<td><input type="text" name="attr_w4range" style="width:100px" /></td> 
+    <td><button class="d6-dice" name="roll_w4" type="roll" value="&{template:customweapon} {{title=@{w4name}}}
+	{{Attack=[[@{w4dice}]]}} {{Damage=[[@{w4dmg}]] @{w4dmgtype} }} ">
+	  </button>
+	</td>  
+  </tr>
+  
+  <tr>
+  	<td><input type="text" name="attr_w5name" style="width:200px" /></td>
+	<td><input type="text" name="attr_w5dice" style="width:100px" /></td> 
+	<td><input type="text" name="attr_w5dmg" style="width:100px" /></td>
+	<td><input type="text" name="attr_w5dmgtype" style="width:100px" /></td> 
+	<td><input type="text" name="attr_w5range" style="width:100px" /></td> 
+    <td><button class="d6-dice" name="roll_w5" type="roll" value="&{template:customweapon} {{title=@{w5name}}}
+	{{Attack=[[@{w5dice}]]}} {{Damage=[[@{w5dmg}]] @{w5dmgtype} }} ">
+	  </button>
+	</td>  
+  </tr>  
+  
+</table>
+
+
+</div>
+
+
+
+
+
+  <div class="sheet-equip sheet-block">
+    <label>Equip</label>
+	<textarea name="attr_equip" placeholder="Equip"></textarea>
+  </div>
+  <div class="sheet-notes sheet-block">
+    <label>Notes</label>
+	<textarea name="attr_notes" placeholder="Notes"></textarea>
+  </div>
+
+
+
+</div>
+
+<input name="attr_muscle_dice" type="hidden" value="0">
+<input name="attr_nimbleness_dice" type="hidden" value="0">
+<input name="attr_wits_dice" type="hidden" value="0">
+<input name="attr_instinct_dice" type="hidden" value="0">
+<input name="attr_initiative_dice" type="hidden" value="0">
+<input name="attr_health_dice" type="hidden" value="0">
+<input name="attr_speed_dice" type="hidden" value="0">
+<input name="attr_tension_dice" type="hidden" value="0">
+<input name="attr_alchemy_dice" type="hidden" value="0">
+<input name="attr_animal_handling_dice" type="hidden" value="0">
+<input name="attr_ascertain_dice" type="hidden" value="0">
+<input name="attr_athleticism_dice" type="hidden" value="0">
+<input name="attr_drive_dice" type="hidden" value="0">
+<input name="attr_medical_dice" type="hidden" value="0">
+<input name="attr_legerdemain_dice" type="hidden" value="0">
+<input name="attr_notice_dice" type="hidden" value="0">
+<input name="attr_occult_dice" type="hidden" value="0">
+<input name="attr_prescence_dice" type="hidden" value="0">
+<input name="attr_pseudoscience_dice" type="hidden" value="0">
+<input name="attr_stealth_dice" type="hidden" value="0">
+<input name="attr_streetwise_dice" type="hidden" value="0">
+<input name="attr_survival_dice" type="hidden" value="0">
+<input name="attr_tinkering_dice" type="hidden" value="0">
+<input name="attr_unarmed_dice" type="hidden" value="0">
+<input name="attr_melee_dice" type="hidden" value="0">
+<input name="attr_guns_dice" type="hidden" value="0">
+<input name="attr_explosives_dice" type="hidden" value="0">
+<input name="attr_world_lore_dice" type="hidden" value="0">
+
+
+
+<!-- ---------------------------SHEET WORKERS----------------- -->
+
+<script type="text/worker">
+
+const int = score => parseInt(score, 10) || 0;
+
+// Auto-calculates & updates 'Stat dice' based on changes to corresponding 'Base Stat',
+// according to the table on page 5 of the Rulebook.
+// If the Base stat is less than 1, the sheet sets the dice to "-2"
+
+const stats = ["muscle", "nimbleness", "wits", "instinct","initiative", "alchemy", "animal_handling", "ascertain" ,"athleticism" , "drive", "legerdemain", "medical" ,"notice","occult", "prescence","pseudoscience","stealth","streetwise","survival","tinkering","world_lore","unarmed","melee","guns","explosives"];
+stats.forEach(stat => {
+    on(`change:${stat}`, () => {
+        getAttrs([stat], values => {
+            const stat_base = int(values[stat]);
+            console.log(stat_base);
+            let stat_dice = 0;
+            if (stat_base == 0) stat_dice = "-2";
+            else if (stat_base == 1) stat_dice = "1d6-1";
+            else if (stat_base == 2) stat_dice = "1d6-1";
+            else if (stat_base == 3) stat_dice = "1d6";
+            else if (stat_base == 4) stat_dice = "1d6";
+            else if (stat_base == 5) stat_dice = "1d6+1";
+            else if (stat_base == 6) stat_dice = "1d6+1";
+			else if (stat_base == 7) stat_dice = "2d6-1";
+            else if (stat_base == 8) stat_dice = "2d6-1";
+            else if (stat_base == 9) stat_dice = "2d6";
+            else if (stat_base == 10) stat_dice = "2d6";
+            else if (stat_base == 11) stat_dice = "2d6+1";
+            else if (stat_base == 12) stat_dice = "2d6+1";
+            else stat_dice = "-2";
+            
+            setAttrs({
+                [`${stat}_dice`]: stat_dice
+            });
+        });
+
+    });
+});
+
+</script>
+
+<rolltemplate class="sheet-rolltemplate-customskill">
+  <div class="sheet-container sheet-color-{{color}}">
+    <div class="sheet-header">
+      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+    </div>
+    <div class="sheet-content">
+      {{#allprops() title subtitle desc color}}
+      <div class="sheet-key">{{key}}</div>
+      <div class="sheet-value">{{value}}</div>
+      {{/allprops() title subtitle desc color}}
+      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+    </div>
+  </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-customstat">
+  <div class="sheet-container sheet-color-{{color}}">
+    <div class="sheet-header">
+      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+    </div>
+    <div class="sheet-content">
+      {{#allprops() title subtitle desc color}}
+      <div class="sheet-key">{{key}}</div>
+      <div class="sheet-value">{{value}}</div>
+      {{/allprops() title subtitle desc color}}
+      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+    </div>
+  </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-customweapon">
+  <div class="sheet-container sheet-color-{{color}}">
+    <div class="sheet-header">
+      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+    </div>
+    <div class="sheet-content">
+      {{#allprops() title subtitle desc color}}
+      <div class="sheet-key">{{key}}</div>
+      <div class="sheet-value">{{value}}</div>
+      {{/allprops() title subtitle desc color}}
+      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+    </div>
+  </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-customcombat">
+  <div class="sheet-container sheet-color-{{color}}">
+    <div class="sheet-header">
+      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+    </div>
+    <div class="sheet-content">
+      {{#allprops() title subtitle desc color}}
+      <div class="sheet-key">{{key}}</div>
+      <div class="sheet-value">{{value}}</div>
+      {{/allprops() title subtitle desc color}}
+      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+    </div>
+  </div>
+</rolltemplate>
+
