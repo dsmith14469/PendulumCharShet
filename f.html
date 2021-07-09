@@ -216,7 +216,8 @@
 	 <b>ASCERTAIN</b>
       <span style="text-decoration: underline;" name="attr_ascertain_dice"></span>
 	  <i>WITS</i>
-      <button class="d6-dice" name="roll_ascertain" type="roll" value="&{template:customskill} {{title=Ascertain}} {{Result=[[@{ascertain_dice}+@{wits_dice}]]}}"></button>
+	  	  <input type="text" name="attr_ascw_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_ascertain" type="roll" value="&{template:customskill} {{title=Ascertain}} {{Result=[[@{ascertain_dice}+@{wits_dice}+@{ascw_bonus}]]}}"></button>
     </div> 
 
      <div class="sheet-stat-block flex-center">
@@ -224,16 +225,19 @@
       <b>ATHLETICISM</b>
       <span style="text-decoration: underline;" name="attr_athleticism_dice"></span>
 	  <i>MUSCLE</i>
-      <button class="d6-dice" name="roll_athleticism" type="roll" value="&{template:customskill} {{title=Athleticism }} {{subtitle=Muscle}} {{Result=[[@{athleticism_dice}+@{muscle_dice}]]}}"></button>
+	  	  <input type="text" name="attr_athw_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_athleticism" type="roll" value="&{template:customskill} {{title=Athleticism }} {{subtitle=Muscle}} {{Result=[[@{athleticism_dice}+@{muscle_dice}|@{athw_bonus}]]}}"></button>
 		<i>NIMBLENESS</i>
-      <button class="d6-dice" name="roll_athleticism" type="roll" value="&{template:customskill} {{title=Athleticism}} {{subtitle=Nimbleness}} {{Result=[[@{athleticism_dice}+@{nimbleness_dice}]]}}"></button>    </div> 
+		<input type="text" name="attr_athn_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_athleticism" type="roll" value="&{template:customskill} {{title=Athleticism}} {{subtitle=Nimbleness}} {{Result=[[@{athleticism_dice}+@{nimbleness_dice}+@{athn_bonus}]]}}"></button>    </div> 
 
      <div class="sheet-stat-block flex-center">
       <input name="attr_drive" type="number" value="">
       <b>DRIVE</b>
       <span style="text-decoration: underline;" name="attr_drive_dice"></span>
 	  <i>NIMBLENESS</i>
-      <button class="d6-dice" name="roll_drive" type="roll" value="&{template:customskill} {{title=Drive}} {{Result=[[@{drive_dice}+@{nimbleness_dice}]]}}"></button>
+	  	  <input type="text" name="attr_drin_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_drive" type="roll" value="&{template:customskill} {{title=Drive}} {{Result=[[@{drive_dice}+@{nimbleness_dice}+{drin_bonus}]]}}"></button>
     </div> 
 
      <div class="sheet-stat-block flex-center">
@@ -241,9 +245,11 @@
       <b>LEGERDEMAIN</b>
       <span style="text-decoration: underline;" name="attr_legerdemain_dice"></span>
 	  <i>NIMBLENESS</i>
-      <button class="d6-dice" name="roll_legerdemain" type="roll" value="&{template:customskill} {{title=Legerdemain (Wits)}} {{Result=[[@{legerdemain_dice}+@{nimbleness_dice}]]}}"></button>
+	  	  <input type="text" name="attr_legn_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_legerdemain" type="roll" value="&{template:customskill} {{title=Legerdemain (Wits)}} {{Result=[[@{legerdemain_dice}+@{nimbleness_dice}+@{legn_bonus}]]}}"></button>
 	  <i>WITS</i>
-      <button class="d6-dice" name="roll_legerdemain" type="roll" value="&{template:customskill} {{title=Legerdemain (Instinct)}} {{Result=[[@{legerdemain_dice}+@{wits_dice}]]}}"></button>
+	  	  <input type="text" name="attr_legw_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_legerdemain" type="roll" value="&{template:customskill} {{title=Legerdemain (Instinct)}} {{Result=[[@{legerdemain_dice}+@{wits_dice}+@{legw_bonus}]]}}"></button>
 	  </div>
 
      <div class="sheet-stat-block flex-center">
@@ -251,7 +257,8 @@
       <b>MEDICAL</b>
       <span style="text-decoration: underline;" name="attr_medical_dice"></span>
 	  <i>WITS</i>
-      <button class="d6-dice" name="roll_medical" type="roll" value="&{template:customskill} {{title=Medical}} {{Result=[[@{medical_dice}+@{wits_dice}]]}}"></button>
+	  	  <input type="text" name="attr_medw_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_medical" type="roll" value="&{template:customskill} {{title=Medical}} {{Result=[[@{medical_dice}+@{wits_dice}+@{medw_bonus}]]}}"></button>
     </div> 
 
      <div class="sheet-stat-block flex-center">
@@ -259,9 +266,11 @@
       <b>NOTICE</b>
       <span style="text-decoration: underline;" name="attr_notice_dice"></span>
 	  <i>WITS</i>
-      <button class="d6-dice" name="roll_notice" type="roll" value="&{template:customskill} {{title=Notice (Wits)}} {{Result=[[@{notice_dice}+@{wits_dice}]]}}"></button>
+	  	  <input type="text" name="attr_notw_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_notice" type="roll" value="&{template:customskill} {{title=Notice (Wits)}} {{Result=[[@{notice_dice}+@{wits_dice}+@{notw_bonus}]]}}"></button>
 	  <i>INSTINCT</i>
-      <button class="d6-dice" name="roll_notice" type="roll" value="&{template:customskill} {{title=Notice (Instinct)}} {{Result=[[@{notice_dice}+@{instincts_dice}]]}}"></button>
+	  	  <input type="text" name="attr_noti_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_notice" type="roll" value="&{template:customskill} {{title=Notice (Instinct)}} {{Result=[[@{notice_dice}+@{instincts_dice}+{noti_bonus}]]}}"></button>
 	  </div> 
 
      <div class="sheet-stat-block flex-center">
@@ -269,9 +278,11 @@
       <b>OCCULT</b>
       <span style="text-decoration: underline;" name="attr_occult_dice"></span>
 	  <i>WITS</i>
-      <button class="d6-dice" name="roll_occult" type="roll" value="&{template:customskill} {{title=Occult (Wits)}} {{Result=[[@{occult_dice}+@{wits_dice}]]}}"></button>
+	  	  <input type="text" name="attr_occw_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_occult" type="roll" value="&{template:customskill} {{title=Occult (Wits)}} {{Result=[[@{occult_dice}+@{wits_dice}+@{occw_bonus}]]}}"></button>
 	  <i>INSTINCT</i>
-      <button class="d6-dice" name="roll_occult" type="roll" value="&{template:customskill} {{title=Occult (Instinct)}} {{Result=[[@{occult_dice}+@{instinct_dice}]]}}"></button>    </div> 
+	  	  <input type="text" name="attr_occi_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_occult" type="roll" value="&{template:customskill} {{title=Occult (Instinct)}} {{Result=[[@{occult_dice}+@{instinct_dice}+@{occi_bonus}]]}}"></button>    </div> 
 
 
      <div class="sheet-stat-block flex-center">
@@ -279,16 +290,19 @@
       <b>PRESCENCE</b>
       <span style="text-decoration: underline;" name="attr_prescence_dice"></span>
 	  <i>WITS</i>
-      <button class="d6-dice" name="roll_prescence" type="roll" value="&{template:customskill} {{title=Prescence (Wits)}} {{Result=[[@{prescence_dice}+@{instinct_dice}]]}}"></button>
+	  	  <input type="text" name="attr_prew_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_prescence" type="roll" value="&{template:customskill} {{title=Prescence (Wits)}} {{Result=[[@{prescence_dice}+@{instinct_dice}+@{prew_bonus}]]}}"></button>
 	  <i>MUSCLE</i>
-      <button class="d6-dice" name="roll_prescence" type="roll" value="&{template:customskill} {{title=Prescence (Muscle)}} {{Result=[[@{prescence_dice}+@{muscle_dice}]]}}"></button>    </div> 
+	  	  <input type="text" name="attr_prem_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_prescence" type="roll" value="&{template:customskill} {{title=Prescence (Muscle)}} {{Result=[[@{prescence_dice}+@{muscle_dice}+@{prem_bonus}]]}}"></button>    </div> 
 	
      <div class="sheet-stat-block flex-center">
       <input name="attr_pseudoscience" type="number" value="">
       <b>PSEUDOSCIENCE</b>
       <span style="text-decoration: underline;" name="attr_pseudoscience_dice"></span>
 	  <i>WITS</i>
-      <button class="d6-dice" name="roll_pseudoscience" type="roll" value="&{template:customskill} {{title=Pseudoscience}} {{Result=[[@{pseudoscience_dice}+@{wits_dice}]]}}"></button>
+	  	  <input type="text" name="attr_psew_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_pseudoscience" type="roll" value="&{template:customskill} {{title=Pseudoscience}} {{Result=[[@{pseudoscience_dice}+@{wits_dice}+@{psew_bonus}]]}}"></button>
     </div> 
 	
      <div class="sheet-stat-block flex-center">
@@ -296,9 +310,11 @@
       <b>STEALTH</b>
       <span style="text-decoration: underline;" name="attr_stealth_dice"></span>
 	  <i>NIMBLENESS</i>
-      <button class="d6-dice" name="roll_stealth" type="roll" value="&{template:customskill} {{title=Stealth (Nimbleness)}} {{Result=[[@{stealth_dice}+@{nimbleness_dice}]]}}"></button>
+	  	  <input type="text" name="attr_sten_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_stealth" type="roll" value="&{template:customskill} {{title=Stealth (Nimbleness)}} {{Result=[[@{stealth_dice}+@{nimbleness_dice}+@{sten_bonus}]]}}"></button>
 	  <i>INSTINCT</i>
-      <button class="d6-dice" name="roll_stealth" type="roll" value="&{template:customskill} {{title=Stealth (Instinct)}} {{Result=[[@{stealth_dice}+@{instinct_dice}]]}}"></button>
+	  	  <input type="text" name="attr_stei_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_stealth" type="roll" value="&{template:customskill} {{title=Stealth (Instinct)}} {{Result=[[@{stealth_dice}+@{instinct_dice}+@{stei_bonus}]]}}"></button>
 	  </div> 
 	
      <div class="sheet-stat-block flex-center">
@@ -306,9 +322,11 @@
       <b>STREETWISE</b>
       <span style="text-decoration: underline;" name="attr_streetwise_dice"></span>
 	  <i>WITS</i>
-      <button class="d6-dice" name="roll_streetwise" type="roll" value="&{template:customskill} {{title=Streetwise (Wits)}} {{Result=[[@{streetwise_dice}+@{wits_dice}]]}}"></button>
+	  	  <input type="text" name="attr_strw_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_streetwise" type="roll" value="&{template:customskill} {{title=Streetwise (Wits)}} {{Result=[[@{streetwise_dice}+@{wits_dice}+@{strw_bonus}]]}}"></button>
 	  <i>INSTINCT</i>
-      <button class="d6-dice" name="roll_streetwise" type="roll" value="&{template:customskill} {{title=Streetwise (Instinct)}} {{Result=[[@{streetwise_dice}+@{instinct_dice}]]}}"></button>
+	  	  <input type="text" name="attr_stri_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_streetwise" type="roll" value="&{template:customskill} {{title=Streetwise (Instinct)}} {{Result=[[@{streetwise_dice}+@{instinct_dice}+@{stri_bonus}]]}}"></button>
 	  </div> 
 	
      <div class="sheet-stat-block flex-center">
@@ -316,9 +334,11 @@
       <b>SURVIVAL</b>
       <span style="text-decoration: underline;" name="attr_survival_dice"></span>
 	  <i>WITS</i>
-      <button class="d6-dice" name="roll_survival" type="roll" value="&{template:customskill} {{title=Survival (Wits)}} {{Result=[[@{survival_dice}+@{wits_dice}]]}}"></button>
+	  	  <input type="text" name="attr_surw_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_survival" type="roll" value="&{template:customskill} {{title=Survival (Wits)}} {{Result=[[@{survival_dice}+@{wits_dice}+@{surw_bonus}]]}}"></button>
 	  <i>INSTINCT</i>
-      <button class="d6-dice" name="roll_survival" type="roll" value="&{template:customskill} {{title=Survival (Instinct)}} {{Result=[[@{survival_dice}+@{instinct_dice}]]}}"></button>
+	  	  <input type="text" name="attr_suri_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_survival" type="roll" value="&{template:customskill} {{title=Survival (Instinct)}} {{Result=[[@{survival_dice}+@{instinct_dice}+@{suru_bonus}]]}}"></button>
 	  </div> 
 	
      <div class="sheet-stat-block flex-center">
@@ -326,9 +346,11 @@
       <b>TINKERING</b>
       <span style="text-decoration: underline;" name="attr_tinkering_dice"></span>
 	  <i>WITS</i>
-      <button class="d6-dice" name="roll_tinkering" type="roll" value="&{template:customskill} {{title=Tinkering (Wits)}} {{Result=[[@{tinkering_dice}+@{wits_dice}]]}}"></button>
+	  	  <input type="text" name="attr_tinw_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_tinkering" type="roll" value="&{template:customskill} {{title=Tinkering (Wits)}} {{Result=[[@{tinkering_dice}+@{wits_dice}+@{tinw_bonus}]]}}"></button>
 	  <i>NIMBLENESS</i>
-      <button class="d6-dice" name="roll_tinkering" type="roll" value="&{template:customskill} {{title=Tinkering (Nimbleness)}} {{Result=[[@{tinkering_dice}+@{nimbleness_dice}]]}}"></button>
+	  	  <input type="text" name="attr_tinn_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_tinkering" type="roll" value="&{template:customskill} {{title=Tinkering (Nimbleness)}} {{Result=[[@{tinkering_dice}+@{nimbleness_dice}+@{tinn_bonus}]]}}"></button>
 	  </div> 
 	
      <div class="sheet-stat-block flex-center">
@@ -336,7 +358,8 @@
       <b>WORLD-LORE</b>
       <span style="text-decoration: underline;" name="attr_world_lore_dice"></span>
 	  <i>WITS</i>
-      <button class="d6-dice" name="roll_world_lore" type="roll" value="&{template:customskill} {{title=World-Lore}} {{Result=[[@{world_lore_dice}+@{wits_dice}]]}}"></button>
+	  	  <input type="text" name="attr_worw_bonus" style="width:50px" />
+      <button class="d6-dice" name="roll_world_lore" type="roll" value="&{template:customskill} {{title=World-Lore}} {{Result=[[@{world_lore_dice}+@{wits_dice}+@{worw_bonus}]]}}"></button>
     </div> 
 	
 
